@@ -1,0 +1,24 @@
+<svg width="45px" height="33px" viewBox="0 0 45 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-100.000000, -49.000000)" fill-rule="nonzero" fill="#D92B30">
+            <g id="th-logo" transform="translate(100.000000, 49.000000)">
+                <rect id="face" x="5" y="9" width="34" height="24"></rect>
+                <rect id="leftEye" x="12" y="13" width="4" height="4"></rect>
+                <rect id="rightEye" x="29" y="13" width="4" height="4"></rect>
+                <rect id="nose" x="21" y="21" width="2" height="2"></rect>
+                <polygon id="mouth" points="15 26 17.1081901 26 17.1081901 28.3494424 27.8766431 28.3494424 27.8766431 26 30 26 30 30 15 30"></polygon>
+                <rect id="rightEar" x="0" y="14" width="4" height="6"></rect>
+                <rect id="leftEar" x="41" y="14" width="4" height="6"></rect>
+                <g id="leftAntenna" transform="translate(17.000000, 0.000000)">
+                    <rect id="Rectangle-path" x="0.882352941" y="2.96296296" width="1.23529412" height="5.03703704"></rect>
+                    <polygon id="Shape" points="0 2.51851852 2.98235294 2.51851852 2.98235294 0 0 0.0148148148"></polygon>
+                </g>
+                <g id="rightAntenna" transform="translate(25.000000, 0.000000)">
+                    <rect id="Rectangle-path" x="0.15" y="0" width="2.81666667" height="2.5037037"></rect>
+                    <rect id="Rectangle-path" x="1" y="2.96296296" width="1.16666667" height="5.02222222"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

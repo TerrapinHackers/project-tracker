@@ -1,0 +1,19 @@
+<form id = "form" #form = "ngForm" (ngSubmit)="newProject(form.value)">
+
+  <div class = "form-group">
+      <label class="bmd-label-floating">Project Name</label>
+      <input id="pname" class="form-control" type = "text" size = "35" name="projectName" ngModel>
+  </div>
+  <div class = "form-group">
+          <label class="bmd-label-floating">Link</label>
+          <input id="zelda" class="form-control" type = "url" name = "projectLink" ngModel>
+  </div>
+  
+  <div class = "form-group">
+      <label class="bmd-label-floating">Description</label>
+      <textarea id="desc" class = "form-control" cols = "50" rows = "10" wrap = "hard" name="projectDescription" ngModel></textarea>   
+  </div>
+
+  <button id = "submit" style = "background-color:red; color:black" type="submit" class="btn btn-primary button">Submit</button>
+
+</form>
