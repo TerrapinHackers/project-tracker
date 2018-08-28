@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore'; 
 import { Observable } from 'rxjs';
+import { Alert } from 'selenium-webdriver';
 
 export interface Item { 
   projectCreator: string,
@@ -24,6 +25,10 @@ export class NewprojectComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.fireAuth.auth.currentUser == null) {
+      alert("You need to be logged in to add your project to the project tracker!");
+      this.router.navigate(['login']);
+    }
   }
   
   newProject(value: any) {

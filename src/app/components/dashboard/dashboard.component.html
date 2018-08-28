@@ -1,3 +1,23 @@
-<p>
-  dashboard works!
-</p>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-12 text-center"> 
+      <h1>On-Going Projects</h1>   
+    </div>
+  </div>
+  <div class = "row dashboardRow" *ngFor = "let item of items | async">
+    <div class = "col-3">
+      <p> {{ item.projectName }}</p> 
+      <br>
+      <p> {{ item.projectCreator }} </p>
+    </div>
+    <div class = "col-6"> 
+      <p>{{ item.projectDescription }} </p>
+
+    </div>
+    <div class = "col-3">
+      <p> {{ item.projectEmail }}</p>
+      <br>
+      <p><a href = "{{item.projectLink}}">{{ item.projectLink}}</a></p> 
+    </div>
+  </div>
+</div>
