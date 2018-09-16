@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { auth } from '../../../../node_modules/firebase';
+import { AppService } from '../../app.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +8,16 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnChanges {
 
-  constructor(public fireAuth: AngularFireAuth, private router: Router) { }
+  constructor(public fireAuth: AngularFireAuth, private router: Router, private stateService : AppService) { }
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.stateService.isLoggedIn().subscribe(res => {
+      if (res) {
+        this.router.navigate(['dashboard']);
+      }
+    });
   }
   
   login(value: any) {

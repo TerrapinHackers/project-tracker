@@ -1,17 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
+import { AppService } from '../../app.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnChanges {
 
-  constructor(public fireAuth: AngularFireAuth, private router: Router) { }
+  constructor(public fireAuth: AngularFireAuth, private router: Router, private stateService : AppService) { }
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.stateService.isLoggedIn().subscribe(res => {
+      if (res) {
+        this.router.navigate(['dashboard']);
+      }
+    });
   }
 
   signup(value: any) {

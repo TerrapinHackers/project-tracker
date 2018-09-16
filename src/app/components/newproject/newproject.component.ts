@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore'; 
+import { AppService } from '../../app.service';
 import { Observable } from 'rxjs';
 import { Alert } from 'selenium-webdriver';
+import * as firebase from "firebase";
 
 export interface Item { 
   projectCreator: string,
@@ -18,17 +20,21 @@ export interface Item {
   templateUrl: './newproject.component.html',
   styleUrls: ['./newproject.component.css']
 })
-export class NewprojectComponent implements OnInit {
+export class NewprojectComponent implements OnChanges {
   private itemsCollection: AngularFirestoreCollection<Item>
-  constructor(private router: Router, public fireAuth: AngularFireAuth, public firestore: AngularFirestore) { 
+  constructor(private router: Router, public fireAuth: AngularFireAuth, public firestore: AngularFirestore, private stateService : AppService ) { 
     this.itemsCollection = firestore.collection<Item>('projects')
   }
 
-  ngOnInit() {
-    if (this.fireAuth.auth.currentUser == null) {
-      alert("You need to be logged in to add your project to the project tracker!");
-      this.router.navigate(['login']);
-    }
+  ngOnChanges() {
+    this.stateService.isLoggedIn().subscribe(res => {
+      if (res) {
+        console.log("Is Logged In");
+      } else {
+        alert("You are not logged in.");
+        this.router.navigate(['login']);
+      }
+    });
   }
   
   newProject(value: any) {

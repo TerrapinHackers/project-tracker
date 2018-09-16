@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NewprojectComponent } from './components/newproject/newproject.component';
 import { environment } from '../environments/environment';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'newproject',
     component: NewprojectComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   }
   
 ]
@@ -46,7 +51,8 @@ const routes: Routes = [
     LoginComponent,
     DashboardComponent,
     SignupComponent,
-    NewprojectComponent
+    NewprojectComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

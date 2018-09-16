@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-tracker';
+  loggedIn = false;
+  constructor (private stateService : AppService) {
+    
+  }
+
+  ngOnInit() {
+    this.stateService.isLoggedIn().subscribe(res => {
+      this.loggedIn = res;
+    });
+    console.log(this.loggedIn);
+  }
+
+  
 }

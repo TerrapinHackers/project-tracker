@@ -10,15 +10,29 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="dashboard">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="newproject">New Project</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login">Login</a>
-            </li>
+            <div *ngIf = "loggedIn === true">
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard">Dashboard</a>
+                </li>
+            </div>
+            <div *ngIf ="loggedIn === true">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="newproject">New Project</a>
+                </li>
+            </div>
+
+            <div *ngIf = "loggedIn === false">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                </li>
+            </div>
+            <div *ngIf = "loggedIn === true">
+                <li class="nav-item">
+                    <a class="nav-link" href="logout">Logout</a>
+                </li>
+            </div>
         </ul>
     </div>
   </nav>
